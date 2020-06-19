@@ -1,0 +1,132 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		body{			
+			background-image: linear-gradient(#feac5e,#c779d0,#4bc0c8);
+}
+
+		.main{
+				text-align: center;
+		}
+		.board{
+			display: flex;
+			flex-direction: flex-start;
+			flex-wrap: wrap;
+			justify-content: space-between; 
+		}
+		.you{
+			height: 300px;
+			width: 600px;
+			margin-left: 50px;
+			border:2px black;
+			background-color:#1d2671;
+			color: white;
+		}
+		.dealer{
+			height: 300px;
+			width: 600px;
+			margin-right: 50px;
+			border:2px black;
+			background-color:#1d2671;
+			color: white;
+			
+		}
+		.scoreBoard{
+
+			margin-left: 600px;
+		}
+		.controls{		
+			padding: 10px;
+		}
+		button{
+			font-size: 25px;
+		}
+		table{
+			font-size: 25px;
+
+		}img{
+			height: 150px;
+			width:120px;
+		}
+		.heading
+		{
+			display: flex;
+			flex-direction: flex-start;
+			flex-wrap: wrap;
+		} 
+		.status{
+				color: white;
+		}
+		.mainHeading{
+			color: white;
+		}
+		.hit,.deal{
+			background-color: #feac5e;
+			border-radius: 10px;
+		}
+		.stand{
+			background-color: #c779d0;
+			border-radius: 10px;	
+		}
+	</style>
+</head>
+<body>
+
+<audio id="winSound">
+  <source src="sounds/cash.mp3" type="audio/mpeg">
+</audio>
+<audio id="lossSound">
+  <source src="sounds/aww.mp3" type="audio/mpeg">
+</audio>
+
+
+<div class="main">
+	<h1 class="mainHeading">' BLACKJACK GAME '</h1>
+	<hr>
+	<h2><div class="status">**Let's Play!!**</div></h2>
+	<div class="board">
+		<div class="you">
+			<div class="heading">
+			<h1>You:<div class="userScore"></div></h1>
+			</div>
+			<div class="userCards"></div>
+		</div>
+		<div class="dealer">
+			<div class="heading">
+
+			<h1>Dealer:<div class="dealScore"></div></h1>
+		</div>
+			
+			<div class="dealCards"></div>
+		</div>
+	</div>
+	<hr>
+	<div class="controls">
+		<button class="hit" onclick="hit()">Hit</button>
+		<button class="stand" onclick="stand()">Stand</button>
+		<button class="deal" onclick="deal()">Deal</button>
+	</div>
+	<hr>
+	<div class="scoreBoard">
+		<table border="2px">
+			<tr>
+				<th>Wins</th>
+				<th>Loss</th>
+				<th>Draw</th>
+			</tr>
+			<tr>
+				<td><div class="win">0</div></td>
+				<td><div class="loss">0</div></td>
+				<td><div class="draw">0</div></td>
+
+			</tr>
+		</table>
+	</div>
+	<hr>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
